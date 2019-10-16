@@ -1,3 +1,13 @@
+/* Based on code made by thodnev.
+ * This code was implemented by:  
+ *  -Olexander Ostrianko
+ *  -Maxim Salim
+ *  -Dana Dovzhenko
+ * CAUTION: Don`t try to read and also to gain insight this code without a
+ * cigarette. It can damage your imagine!
+ */
+
+
 #include <linux/module.h>	// required by all modules
 #include <linux/kernel.h>	// required for sysinfo
 #include <linux/init.h>		// used by module_init, module_exit macros
@@ -447,9 +457,9 @@ static long cdev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 //       make these bees twerk
 // TODO: add ioctl to select buffer size
 static struct file_operations hive_fops = {
-	.open =		&cdev_open,
+	.open =			&cdev_open,
 	.release =		&cdev_release,
-	.read =		&cdev_read,
+	.read =			&cdev_read,
 	.write =		&cdev_write,
 	.llseek =		&cdev_lseek,
 	.unlocked_ioctl =	&cdev_ioctl,

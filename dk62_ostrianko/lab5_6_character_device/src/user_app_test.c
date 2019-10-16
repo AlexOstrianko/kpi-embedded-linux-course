@@ -45,10 +45,9 @@ int main(int argc, char* argv[])
 	if (w_r < 0) {
       		printf("Failed to read the message from the device.");
       		return 0;
-   	} else
-		printf ("SOME MAGIC _read_: %s\n", magic_phrase);
-
-
+   	} else {
+		printf ("SOME MAGIC _read_: %s\n", str4magic);
+	}
 
 	printf("\nType a buffersize and press ENTER:\n");
 	scanf("%d", &num);
@@ -85,10 +84,7 @@ int main(int argc, char* argv[])
       		return 0;
    	} else
 		printf ("Read line: %s\n", buf);
-	
-	close(fd);
-	close(fd_2);
-
+/*
 	int dv[10];
 	for (int i = 0; i < 10; i ++) {
 		dv[i] = open("/dev/hive_dev", O_RDWR);
@@ -97,7 +93,7 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < 10; i ++) {
 		close(dv[i]);
 	}
-
+*/
 	return 0;
 }
 
